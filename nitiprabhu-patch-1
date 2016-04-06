@@ -1,1 +1,29 @@
 
+package com.ise.project.sentiAnalysis;
+
+import java.io.*;
+
+/**
+ * Created by India on 06-Apr-16.
+ */
+public class FindNotFound extends PositiveWordsArray{
+    public static void main(String args[])
+    {
+
+        try (Writer writer = new BufferedWriter(new OutputStreamWriter(
+                new FileOutputStream("C:\\Users\\India\\Downloads\\Sentiment-Analysis-on-Twitter\\core\\src\\main\\resources\\positiveFound"), "utf-8"))) {
+
+            for (String s:FindNotFound.pw)
+            {
+                if (SentiWordList.getIfPresent(s))
+                    writer.append(s+"\n");
+
+            }
+
+        } catch (Exception e)
+        {
+            System.out.println("FNF");
+        }
+    }
+
+}
