@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+
+    <parent>
+        <groupId>org.springframework.boot</groupId>
+        <artifactId>spring-boot-starter-parent</artifactId>
+        <version>1.2.5.RELEASE</version>
+    </parent>
+
+    <groupId>com.ucu.twitter.analysis</groupId>
+    <artifactId>twitter-analysis-core</artifactId>
+
+    <properties>
+        <java.version>1.8</java.version>
+    </properties>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.google.guava</groupId>
+            <artifactId>guava</artifactId>
+            <version>12.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.social</groupId>
+            <artifactId>spring-social-twitter</artifactId>
+            <version>1.1.0.RELEASE</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>2.3.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.projectlombok</groupId>
+            <artifactId>lombok</artifactId>
+            <version>1.16.2</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>commons-io</groupId>
+            <artifactId>commons-io</artifactId>
+            <version>2.4</version>
+        </dependency>
+    </dependencies>
+
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-maven-plugin</artifactId>
+            </plugin>
+        </plugins>
+    </build>
+
+    <profiles>
+        <profile>
+            <id>COMMON</id>
+            <activation>
+                <activeByDefault>true</activeByDefault>
+            </activation>
+            <properties>
+                <spring.social.twitter.appId>5YLjNsOP2XJAK3VexX4KD3Sns</spring.social.twitter.appId>
+                <spring.social.twitter.appSecret>F5eK8NbsCcyoqc8I7OoiE6t8MVHanxudJBNTTtpyeysw6hfcu2
+                </spring.social.twitter.appSecret>
+                <spring.social.twitter.access.token>394658000-HHxxQDDJWS9zC9bENJjacJBhOQTkYc9HhpZ31BfL
+                </spring.social.twitter.access.token>
+                <spring.social.twitter.access.token.secret>XGuvPZku2SeXPuo3bxH2IYqS43bRJDzFjHxIombPioheR
+                </spring.social.twitter.access.token.secret>
+                <datumbox.api.key>14f149d67468fcd213ce7ef49345ad05</datumbox.api.key>
+                <datumbox.api.endpoint>http://api.datumbox.com:80/1.0/TwitterSentimentAnalysis.json
+                </datumbox.api.endpoint>
+            </properties>
+        </profile>
+    </profiles>
+</project>
